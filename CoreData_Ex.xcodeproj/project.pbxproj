@@ -16,6 +16,9 @@
 		385E7F72222FCB7C00408BFD /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F71222FCB7C00408BFD /* Mood.swift */; };
 		385E7F75222FDD0900408BFD /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F74222FDD0900408BFD /* SegueHandler.swift */; };
 		385E7F78222FE07300408BFD /* MoodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F77222FE07300408BFD /* MoodsTableViewController.swift */; };
+		38F4147C223007A800836F14 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4147B223007A800836F14 /* Managed.swift */; };
+		38F4147E223012B900836F14 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4147D223012B900836F14 /* TableViewDataSource.swift */; };
+		38F414802230178D00836F14 /* TableViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4147F2230178D00836F14 /* TableViewDataSourceDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		385E7F71222FCB7C00408BFD /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		385E7F74222FDD0900408BFD /* SegueHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
 		385E7F77222FE07300408BFD /* MoodsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsTableViewController.swift; sourceTree = "<group>"; };
+		38F4147B223007A800836F14 /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
+		38F4147D223012B900836F14 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		38F4147F2230178D00836F14 /* TableViewDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				385E7F74222FDD0900408BFD /* SegueHandler.swift */,
+				38F4147B223007A800836F14 /* Managed.swift */,
+				38F4147D223012B900836F14 /* TableViewDataSource.swift */,
+				38F4147F2230178D00836F14 /* TableViewDataSourceDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -165,8 +174,11 @@
 			files = (
 				385E7F72222FCB7C00408BFD /* Mood.swift in Sources */,
 				385E7F75222FDD0900408BFD /* SegueHandler.swift in Sources */,
+				38F414802230178D00836F14 /* TableViewDataSourceDelegate.swift in Sources */,
+				38F4147E223012B900836F14 /* TableViewDataSource.swift in Sources */,
 				385E7F5F222FC95100408BFD /* RootViewController.swift in Sources */,
 				385E7F5D222FC95100408BFD /* AppDelegate.swift in Sources */,
+				38F4147C223007A800836F14 /* Managed.swift in Sources */,
 				385E7F78222FE07300408BFD /* MoodsTableViewController.swift in Sources */,
 				385E7F70222FC98A00408BFD /* Model.xcdatamodeld in Sources */,
 			);
