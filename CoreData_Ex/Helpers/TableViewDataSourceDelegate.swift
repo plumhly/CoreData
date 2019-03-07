@@ -8,8 +8,11 @@
 
 import Foundation
 import CoreData
+import UIKit
 
-protocol TableViewDataSourceDelegate {
+protocol TableViewDataSourceDelegate: class {
     associatedtype Object: NSFetchRequestResult
-    associatedtype Cell
+    associatedtype Cell: UITableViewCell
+    
+    func configure(_ cell: Cell, for object: Object)
 }

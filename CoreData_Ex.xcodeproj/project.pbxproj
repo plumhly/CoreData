@@ -16,6 +16,17 @@
 		385E7F72222FCB7C00408BFD /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F71222FCB7C00408BFD /* Mood.swift */; };
 		385E7F75222FDD0900408BFD /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F74222FDD0900408BFD /* SegueHandler.swift */; };
 		385E7F78222FE07300408BFD /* MoodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F77222FE07300408BFD /* MoodsTableViewController.swift */; };
+		385E7F7B2230C3FF00408BFD /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F7A2230C3FF00408BFD /* MoodTableViewCell.swift */; };
+		385E7F7D2230C81200408BFD /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F7C2230C81200408BFD /* NSManagedObjectContext+Extension.swift */; };
+		385E7F7F2230EEEA00408BFD /* MoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F7E2230EEEA00408BFD /* MoodDetailViewController.swift */; };
+		385E7F812230F3BB00408BFD /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F802230F3BB00408BFD /* ManagedObjectObserver.swift */; };
+		385E7F832230F8A400408BFD /* NSManagedObjectContext+observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F822230F8A400408BFD /* NSManagedObjectContext+observers.swift */; };
+		385E7F852231009C00408BFD /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F842231009C00408BFD /* Utilities.swift */; };
+		385E7F87223110E000408BFD /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F86223110E000408BFD /* Country.swift */; };
+		385E7F8A223112B300408BFD /* ISO3166.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F89223112B300408BFD /* ISO3166.swift */; };
+		385E7F8C2231139B00408BFD /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F8B2231139B00408BFD /* Continent.swift */; };
+		385E7F8E2231196300408BFD /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F8D2231196300408BFD /* Region.swift */; };
+		385E7F9122311B3600408BFD /* LocalizedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E7F9022311B3600408BFD /* LocalizedStringConvertible.swift */; };
 		38F4147C223007A800836F14 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4147B223007A800836F14 /* Managed.swift */; };
 		38F4147E223012B900836F14 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4147D223012B900836F14 /* TableViewDataSource.swift */; };
 		38F414802230178D00836F14 /* TableViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4147F2230178D00836F14 /* TableViewDataSourceDelegate.swift */; };
@@ -33,6 +44,17 @@
 		385E7F71222FCB7C00408BFD /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		385E7F74222FDD0900408BFD /* SegueHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
 		385E7F77222FE07300408BFD /* MoodsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsTableViewController.swift; sourceTree = "<group>"; };
+		385E7F7A2230C3FF00408BFD /* MoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
+		385E7F7C2230C81200408BFD /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
+		385E7F7E2230EEEA00408BFD /* MoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailViewController.swift; sourceTree = "<group>"; };
+		385E7F802230F3BB00408BFD /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
+		385E7F822230F8A400408BFD /* NSManagedObjectContext+observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+observers.swift"; sourceTree = "<group>"; };
+		385E7F842231009C00408BFD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		385E7F86223110E000408BFD /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		385E7F89223112B300408BFD /* ISO3166.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO3166.swift; sourceTree = "<group>"; };
+		385E7F8B2231139B00408BFD /* Continent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
+		385E7F8D2231196300408BFD /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		385E7F9022311B3600408BFD /* LocalizedStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringConvertible.swift; sourceTree = "<group>"; };
 		38F4147B223007A800836F14 /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		38F4147D223012B900836F14 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		38F4147F2230178D00836F14 /* TableViewDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceDelegate.swift; sourceTree = "<group>"; };
@@ -68,10 +90,12 @@
 		385E7F5B222FC95100408BFD /* CoreData_Ex */ = {
 			isa = PBXGroup;
 			children = (
+				385E7F8F22311B0E00408BFD /* Localization */,
+				385E7F88223112A500408BFD /* Model */,
+				385E7F792230C3E700408BFD /* View */,
 				385E7F76222FE03C00408BFD /* View Controller */,
 				385E7F73222FDCFD00408BFD /* Helpers */,
 				385E7F5C222FC95100408BFD /* AppDelegate.swift */,
-				385E7F71222FCB7C00408BFD /* Mood.swift */,
 				385E7F6E222FC98A00408BFD /* Model.xcdatamodeld */,
 				385E7F60222FC95100408BFD /* Main.storyboard */,
 				385E7F63222FC95200408BFD /* Assets.xcassets */,
@@ -85,9 +109,13 @@
 			isa = PBXGroup;
 			children = (
 				385E7F74222FDD0900408BFD /* SegueHandler.swift */,
+				385E7F802230F3BB00408BFD /* ManagedObjectObserver.swift */,
 				38F4147B223007A800836F14 /* Managed.swift */,
 				38F4147D223012B900836F14 /* TableViewDataSource.swift */,
 				38F4147F2230178D00836F14 /* TableViewDataSourceDelegate.swift */,
+				385E7F7C2230C81200408BFD /* NSManagedObjectContext+Extension.swift */,
+				385E7F822230F8A400408BFD /* NSManagedObjectContext+observers.swift */,
+				385E7F842231009C00408BFD /* Utilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -97,8 +125,37 @@
 			children = (
 				385E7F5E222FC95100408BFD /* RootViewController.swift */,
 				385E7F77222FE07300408BFD /* MoodsTableViewController.swift */,
+				385E7F7E2230EEEA00408BFD /* MoodDetailViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		385E7F792230C3E700408BFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				385E7F7A2230C3FF00408BFD /* MoodTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		385E7F88223112A500408BFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				385E7F71222FCB7C00408BFD /* Mood.swift */,
+				385E7F8B2231139B00408BFD /* Continent.swift */,
+				385E7F86223110E000408BFD /* Country.swift */,
+				385E7F89223112B300408BFD /* ISO3166.swift */,
+				385E7F8D2231196300408BFD /* Region.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		385E7F8F22311B0E00408BFD /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				385E7F9022311B3600408BFD /* LocalizedStringConvertible.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,11 +232,22 @@
 				385E7F72222FCB7C00408BFD /* Mood.swift in Sources */,
 				385E7F75222FDD0900408BFD /* SegueHandler.swift in Sources */,
 				38F414802230178D00836F14 /* TableViewDataSourceDelegate.swift in Sources */,
+				385E7F852231009C00408BFD /* Utilities.swift in Sources */,
+				385E7F812230F3BB00408BFD /* ManagedObjectObserver.swift in Sources */,
 				38F4147E223012B900836F14 /* TableViewDataSource.swift in Sources */,
+				385E7F8A223112B300408BFD /* ISO3166.swift in Sources */,
+				385E7F832230F8A400408BFD /* NSManagedObjectContext+observers.swift in Sources */,
+				385E7F9122311B3600408BFD /* LocalizedStringConvertible.swift in Sources */,
+				385E7F8E2231196300408BFD /* Region.swift in Sources */,
 				385E7F5F222FC95100408BFD /* RootViewController.swift in Sources */,
 				385E7F5D222FC95100408BFD /* AppDelegate.swift in Sources */,
+				385E7F7B2230C3FF00408BFD /* MoodTableViewCell.swift in Sources */,
 				38F4147C223007A800836F14 /* Managed.swift in Sources */,
 				385E7F78222FE07300408BFD /* MoodsTableViewController.swift in Sources */,
+				385E7F87223110E000408BFD /* Country.swift in Sources */,
+				385E7F8C2231139B00408BFD /* Continent.swift in Sources */,
+				385E7F7D2230C81200408BFD /* NSManagedObjectContext+Extension.swift in Sources */,
+				385E7F7F2230EEEA00408BFD /* MoodDetailViewController.swift in Sources */,
 				385E7F70222FC98A00408BFD /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
