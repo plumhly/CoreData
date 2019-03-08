@@ -17,6 +17,12 @@ final class Country: NSManagedObject {
     @NSManaged var updateAt: Date
     @NSManaged fileprivate var numericISO3166Code: Int16
     
+    @NSManaged fileprivate(set) var moods: Set<Mood>
+    @NSManaged fileprivate(set) var continent: Continent?
+    fileprivate var mutableMoods: NSMutableSet {
+        return mutableSetValue(forKeyPath: #keyPath(moods))
+    }
+    
     fileprivate(set) var iso3166Code: ISO3166.Country {
         get {
             guard let c = ISO3166.Country(rawValue: numericISO3166Code) else {
@@ -27,6 +33,24 @@ final class Country: NSManagedObject {
         
         set {
             numericISO3166Code = newValue.rawValue
+        }
+    }
+    
+    static func findOrCreate(for isoCountry: ISO3166.Country, in context: NSManagedObjectContext) -> Country {
+        let predicate = NSPredicate(format: "%K == %d", #keyPath(numericISO3166Code), isoCountry.rawValue)
+        let country = findOrCreate(in: context, matching: predicate) {
+            $0.iso3166Code = isoCountry
+            $0.continent = Continent.findOrCeateContinent(for: isoCountry, in: context)
+            $0.updateAt = Date()
+        }
+        return country
+    }
+    
+    override func prepareForDeletion() {
+        guard let c = continent else { return }
+        if c.coutries.filter({ !$0.isDeleted }).isEmpty {
+            managedObjectContext?.delete(c)
+
         }
     }
 }

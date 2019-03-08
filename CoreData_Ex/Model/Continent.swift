@@ -13,6 +13,7 @@ import CoreData
     
     @NSManaged var updateAt: Date
     @NSManaged fileprivate var numericISO3166Code: Int16
+    @NSManaged fileprivate(set) var coutries: Set<Country>
     
     fileprivate(set) var iso3166Code: ISO3166.Continent {
         get {
@@ -25,6 +26,17 @@ import CoreData
         set {
             numericISO3166Code = newValue.rawValue
         }
+    }
+    
+    static func findOrCeateContinent(for isoCountry: ISO3166.Country, in context: NSManagedObjectContext) -> Continent? {
+        guard let isoContinent = ISO3166.Continent(county: isoCountry) else { return nil }
+        let predicate = NSPredicate(format: "%K == %d", #keyPath(numericISO3166Code), Int(isoContinent.rawValue))
+        let continent = findOrCreate(in: context, matching: predicate) {
+            $0.iso3166Code = isoContinent
+            $0.updateAt = Date()
+        }
+        
+        return continent
     }
 
 }
