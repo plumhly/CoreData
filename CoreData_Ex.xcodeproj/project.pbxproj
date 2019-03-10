@@ -30,6 +30,7 @@
 		38F4147C223007A800836F14 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4147B223007A800836F14 /* Managed.swift */; };
 		38F4147E223012B900836F14 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4147D223012B900836F14 /* TableViewDataSource.swift */; };
 		38F414802230178D00836F14 /* TableViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4147F2230178D00836F14 /* TableViewDataSourceDelegate.swift */; };
+		38F41482223556C300836F14 /* ValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F41481223556C300836F14 /* ValueTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		38F4147B223007A800836F14 /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		38F4147D223012B900836F14 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		38F4147F2230178D00836F14 /* TableViewDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceDelegate.swift; sourceTree = "<group>"; };
+		38F41481223556C300836F14 /* ValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				385E7F7C2230C81200408BFD /* NSManagedObjectContext+Extension.swift */,
 				385E7F822230F8A400408BFD /* NSManagedObjectContext+observers.swift */,
 				385E7F842231009C00408BFD /* Utilities.swift */,
+				38F41481223556C300836F14 /* ValueTransformer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				385E7F75222FDD0900408BFD /* SegueHandler.swift in Sources */,
 				38F414802230178D00836F14 /* TableViewDataSourceDelegate.swift in Sources */,
 				385E7F852231009C00408BFD /* Utilities.swift in Sources */,
+				38F41482223556C300836F14 /* ValueTransformer.swift in Sources */,
 				385E7F812230F3BB00408BFD /* ManagedObjectObserver.swift in Sources */,
 				38F4147E223012B900836F14 /* TableViewDataSource.swift in Sources */,
 				385E7F8A223112B300408BFD /* ISO3166.swift in Sources */,

@@ -58,6 +58,25 @@ extension Mood: Managed {
     }
 }
 
+private let ColorsTransformerName = "ColorsTransformer"
+
+extension Mood {
+    static func resiterValueTransformers() {
+        _ = self.__registerOnce
+    }
+
+    fileprivate static let __registerOnce: () = {
+        ClosureValueTransformer.registerTransformer(withName: ColorsTransformerName, transform: { (colors: NSArray?) -> NSData? in
+            guard let colors = colors as? [UIColor] else { return nil }
+            return colors.moodData as NSData
+        }, reverseTransform: { (data: NSData?) -> NSArray? in
+            return data
+                .flatMap { ($0 as Data).moodColor }
+                .map { $0 as NSArray }
+        })
+    }()
+}
+
 
 extension Collection where Iterator.Element: UIColor {
     var moodData: Data {
@@ -96,10 +115,20 @@ extension Data {
         rgbValues.withUnsafeMutableBufferPointer {
             buffer in
             let voidPoint = UnsafeMutableRawPointer(buffer.baseAddress)
-            _ = withUnsafeBytes {
+            let _ = withUnsafeBytes {
                 bytes in
-                memcpy(buffer, bytes, count)
+                memcpy(voidPoint, bytes, count)
             }
         }
+        let rgbSlices = rgbValues.slice(size: 3)
+        return rgbSlices.map { slice in
+            guard let color = UIColor(rawData: slice) else {
+                fatalError("cannot fail since we know tuple is of length 3")
+            }
+            return color
+        }
+        
     }
 }
+
+

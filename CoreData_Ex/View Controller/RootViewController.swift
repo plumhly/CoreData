@@ -38,7 +38,7 @@ class RootViewController: UIViewController, SegueHandler {
     // MARK: - 私有方法
     func didCaptureImage(image: UIImage) {
         managedContext.performChange {
-            _ = Mood.insert(into: self.managedContext, image: image)
+//            _ = Mood.insert(into: self.managedContext, image: image)
         }
     }
 

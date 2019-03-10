@@ -15,3 +15,16 @@ extension Collection where Iterator.Element: AnyObject {
 }
 
 
+
+extension Array {
+    
+    func slice(size: Int) -> [[Iterator.Element]] {
+        var result: [[Iterator.Element]] = []
+        
+        for index in stride(from: startIndex, to: endIndex, by: size) {
+            let end = Swift.min(index + size, endIndex)
+            result.append(Array(self[index..<end]))
+        }
+        return result
+    }
+}
