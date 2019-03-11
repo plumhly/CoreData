@@ -18,13 +18,12 @@ final class Mood: NSManagedObject {
     @NSManaged fileprivate var latitude: NSNumber?
     
     @NSManaged public fileprivate(set) var country: Country
-    
+    @NSManaged fileprivate var primitiveDate: Date
     
     static func insert(into context: NSManagedObjectContext, image: UIImage, localtion: CLLocation?, placeMark: CLPlacemark?) -> Mood {
         let mood: Mood = context.insert()
         mood.colors = []
         mood.date = Date()
-        
         if let local = localtion?.coordinate {
             mood.latitude = NSNumber(value: local.latitude)
             mood.longtitude = NSNumber(value: local.longitude)
@@ -49,12 +48,24 @@ final class Mood: NSManagedObject {
             managedObjectContext?.delete(country)
         }
     }
+    
+    override func awakeFromInsert() {
+        super.awakeFromInsert()
+        primitiveDate = Date()
+    }
+    
 }
 
 
 extension Mood: Managed {
     static var defaultDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: #keyPath(date), ascending: false)]
+    }
+}
+
+extension Mood {
+    override func validateValue(_ value: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey key: String) throws {
+        <#code#>
     }
 }
 
@@ -76,6 +87,8 @@ extension Mood {
         })
     }()
 }
+
+
 
 
 extension Collection where Iterator.Element: UIColor {
