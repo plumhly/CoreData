@@ -13,11 +13,33 @@ import CoreLocation
 
 final class Mood: NSManagedObject {
     @NSManaged fileprivate(set) var date: Date
-    @NSManaged fileprivate(set) var colors: [UIColor]
+    @objc public fileprivate(set) var colors: [UIColor] {
+        get {
+            willAccessValue(forKey: #keyPath(colors))
+            var c = primitiveColors
+            didAccessValue(forKey: #keyPath(colors))
+            if c == nil {
+                c = colorStorage.moodColor ?? []
+                primitiveColors = c
+            }
+            return c!
+        }
+        
+        set {
+            willChangeValue(forKey: #keyPath(colors))
+            primitiveColors = newValue
+            didChangeValue(forKey: #keyPath(colors))
+            colorStorage = newValue.moodData
+        }
+    }
     @NSManaged fileprivate var longtitude: NSNumber?
     @NSManaged fileprivate var latitude: NSNumber?
     
     @NSManaged public fileprivate(set) var country: Country
+    
+    
+    @NSManaged fileprivate var colorStorage: Data
+    @NSManaged fileprivate var primitiveColors: [UIColor]?
     
     
     static func insert(into context: NSManagedObjectContext, image: UIImage, localtion: CLLocation?, placeMark: CLPlacemark?) -> Mood {
