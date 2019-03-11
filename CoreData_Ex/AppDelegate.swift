@@ -57,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func createMoodContainer(complete: @escaping (NSPersistentContainer)-> ()) {
+        Mood.resiterValueTransformers()
         let container = NSPersistentContainer(name: "Model")
         container.loadPersistentStores { (_, error) in
             guard error == nil else  {
