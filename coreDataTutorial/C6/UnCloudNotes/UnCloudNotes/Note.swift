@@ -35,10 +35,22 @@ class Note: NSManagedObject {
   @NSManaged var body: String
   @NSManaged var dateCreated: Date!
   @NSManaged var displayIndex: NSNumber!
-  @NSManaged var image: UIImage?
+  @NSManaged var attachments: Set<Attachment>?
   
   override func awakeFromInsert() {
     super.awakeFromInsert()
     dateCreated = Date()
+  }
+  
+  var image: UIImage {
+    return UIImage()
+  }
+  
+  fileprivate var lastAttachment: Attachment? {
+    guard let attachments = attachments, let firstAttach = attachments.first else { return nil }
+    
+    return Array(attachments).reduce(firstAttach, { (result, next) in
+      result.date.compare(next.date) == .orderedAscending ? next : result
+    })
   }
 }
