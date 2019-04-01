@@ -51,7 +51,6 @@ class ViewController: UIViewController {
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     let name = "Fido"
     let request: NSFetchRequest<Dog> = Dog.fetchRequest()
     request.predicate = NSPredicate(format: "%K = %@", #keyPath(Dog.name), name)
@@ -113,5 +112,21 @@ extension ViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return "List of Walks"
+  }
+  
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    guard editingStyle == .delete, let removeWalk = currentDog.walks?[indexPath.row] as? Walk else { return }
+    managerContext.delete(removeWalk)
+    
+    do {
+      try managerContext.save()
+      tableView.deleteRows(at: [indexPath], with: .automatic)
+    } catch let error as NSError {
+      print(error)
+    }
   }
 }
