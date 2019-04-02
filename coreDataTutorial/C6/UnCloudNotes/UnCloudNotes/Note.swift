@@ -42,8 +42,8 @@ class Note: NSManagedObject {
     dateCreated = Date()
   }
   
-  var image: UIImage {
-    return UIImage()
+  var image: UIImage? {
+    return lastAttachment?.image
   }
   
   fileprivate var lastAttachment: Attachment? {
