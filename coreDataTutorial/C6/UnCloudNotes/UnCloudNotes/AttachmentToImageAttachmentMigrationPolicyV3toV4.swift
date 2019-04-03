@@ -33,9 +33,10 @@ class AttachmentToImageAttachmentMigrationPolicyV3toV4: NSEntityMigrationPolicy 
         let info = [NSLocalizedFailureReasonErrorKey: message]
         throw NSError(domain: errorDomain, code: 0, userInfo: info)
       }
-      
+    }
       try tranversePropertyMappings { propertyMapping, propertyName in
-        guard let express = propertyMapping.valueExpression,  let destinationValue = express.expressionValue(with: sInstance, context: nil) else { return }
+        let context = ["source": sInstance] as NSMutableDictionary
+        guard let express = propertyMapping.valueExpression,  let destinationValue = express.expressionValue(with: sInstance, context: context) else { return }
         newImageAttachment.setValue(destinationValue, forKey: propertyName)
       }
       
@@ -50,5 +51,4 @@ class AttachmentToImageAttachmentMigrationPolicyV3toV4: NSEntityMigrationPolicy 
       manager.associate(sourceInstance: sInstance, withDestinationInstance: newImageAttachment, for: mapping)
       
     }
-  }
 }
