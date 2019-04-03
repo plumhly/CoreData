@@ -65,6 +65,7 @@ extension AttachPhotoViewController: UIImagePickerControllerDelegate {
     attachment.note = note
     attachment.image = image
     attachment.caption = "New Photo"
+    attachment.date = Date()
     attachment.width = Float(image.size.width)
     attachment.height = Float(image.size.height)
     navigationController?.popViewController(animated: true)
