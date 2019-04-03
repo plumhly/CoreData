@@ -64,6 +64,7 @@ extension AttachPhotoViewController: UIImagePickerControllerDelegate {
     let attachment = Attachment(context: context)
     attachment.note = note
     attachment.image = info[.originalImage] as? UIImage
+    attachment.date = Date()
     
     navigationController?.popViewController(animated: true)
   }
