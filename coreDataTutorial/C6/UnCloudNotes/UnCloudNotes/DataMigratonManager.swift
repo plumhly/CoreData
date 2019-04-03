@@ -73,7 +73,7 @@ class DataMigrationManager {
       let destination = NSManagedObjectModel.version3
       let mapping = NSMappingModel(from: nil, forSourceModel: store, destinationModel: destination)
       migrateStoreAt(storeURL, form: store, to: destination, with: mapping)
-      
+      performMigration()
     } else if(store.isVersion3) {
       let destination = NSManagedObjectModel.version4
       let mapping = NSMappingModel(from: nil, forSourceModel: store, destinationModel: destination)
