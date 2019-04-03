@@ -43,7 +43,8 @@ class Note: NSManagedObject {
   }
   
   var image: UIImage? {
-    return lastAttachment?.image
+    let imageAttach = lastAttachment as? ImageAttachment
+    return imageAttach?.image
   }
   
   fileprivate var lastAttachment: Attachment? {

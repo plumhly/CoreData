@@ -13,7 +13,8 @@ let errorDomain = "Migration"
 
 class AttachmentToImageAttachmentMigrationPolicyV3toV4: NSEntityMigrationPolicy {
   override func createDestinationInstances(forSource sInstance: NSManagedObject, in mapping: NSEntityMapping, manager: NSMigrationManager) throws {
-    let newImageAttachment = ImageAttachment(context: manager.destinationContext)
+    guard let entityDescription = NSEntityDescription.entity(forEntityName: "ImageAttachment", in: manager.destinationContext) else { return }
+    let newImageAttachment = ImageAttachment(entity: entityDescription, insertInto: manager.destinationContext)
     
     func tranversePropertyMappings(block: (NSPropertyMapping, String) -> Void) throws {
       if let attributeMappings = mapping.attributeMappings {
@@ -34,10 +35,20 @@ class AttachmentToImageAttachmentMigrationPolicyV3toV4: NSEntityMigrationPolicy 
       }
       
       try tranversePropertyMappings { propertyMapping, propertyName in
-        guard let express = propertyMapping.valueExpression else { return }
-        
-//        express.expressionValue(with: <#T##Any?#>, context: <#T##NSMutableDictionary?#>)
+        guard let express = propertyMapping.valueExpression,  let destinationValue = express.expressionValue(with: sInstance, context: nil) else { return }
+        newImageAttachment.setValue(destinationValue, forKey: propertyName)
       }
+      
+      if let image = newImageAttachment.image {
+        newImageAttachment.setValue(image.size.width, forKey: "width")
+        newImageAttachment.setValue(image.size.height, forKey: "height")
+      }
+      
+      let caption = newImageAttachment.note?.body as NSString? ?? ""
+      newImageAttachment.setValue(caption, forKey: "caption")
+      
+      manager.associate(sourceInstance: sInstance, withDestinationInstance: newImageAttachment, for: mapping)
+      
     }
   }
 }

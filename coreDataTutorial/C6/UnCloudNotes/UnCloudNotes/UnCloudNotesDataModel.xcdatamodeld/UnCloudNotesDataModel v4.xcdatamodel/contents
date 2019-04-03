@@ -19,7 +19,7 @@
     </entity>
     <elements>
         <element name="Attachment" positionX="-63" positionY="9" width="128" height="75"/>
-        <element name="Note" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="ImageAttachment" positionX="-45" positionY="36" width="128" height="105"/>
+        <element name="Note" positionX="6.73046875" positionY="147.62109375" width="128" height="120"/>
+        <element name="ImageAttachment" positionX="245.33203125" positionY="-2.39453125" width="128" height="103"/>
     </elements>
 </model>
